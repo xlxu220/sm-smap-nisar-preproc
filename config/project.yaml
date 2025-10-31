@@ -1,0 +1,62 @@
+roi:
+  west: -118.48
+  east: -117.47
+  south: 34.235
+  north: 35.365
+
+start_date: "2019-07-25"
+end_date:   "2019-07-27"
+
+stac_url: "https://stac.maap-project.org"
+
+data_sources:
+  smap:
+    # earthaccess route:
+    short_name: "SPL3SMP_E"
+    anc_name: "C3412875276-NSIDC_CPRD" #earthaccess.search_data(concept_id=COLL_ID)
+    
+  nisar:
+    type: stac
+    collection: "nisar-sim"     # adjust as needed
+    asset_key: "GCOV"          # or leave blank to capture all assets
+
+  ndvi_smap:
+    type: s3
+    s3_prefix: "s3://nsidc-cumulus-prod-protected/SMAP-ANC/SMAP_L1_L3_ANC_STATIC/1/2015/01/14/"
+    dtype: int16
+    scale: 0.0001
+    offset: 0.0
+    nodata: -9999    
+    endianness: little
+    
+  clay_raw:
+    type: s3
+    s3_prefix: "s3://maap-ops-workspace/shared/xlxu220/ANCILLARY/SOIL_TEXTURE/RAW/"
+    pattern: "*.tif"
+
+
+UTMgrid:    
+  target_grid:
+  # Optional: set explicitly, otherwise UTM is auto-computed
+      # crs: "EPSG:32611"
+    resolution: 200
+    nodata: -9999
+    dtype: float32
+    template_path: "../data/outputs/aligned/_grid_template.tif"
+
+EASE2grid:
+    crs: "EPSG:6933"          # EASE-Grid 2.0 Global
+    ulx: -17367530.44        # upper-left x (meters)
+    uly:  7314540.83         # upper-left y (meters) 
+    M36: 36032.22          # meters 
+    M09: 9008.05
+    M01: 1000.9
+    M200: 200.18
+    M36_nx_col: 964
+    M36_ny_row: 406
+    M09_nx_col: 3856
+    M09_ny_row: 1624
+    M01_nx_col: 34704
+    M01_ny_row: 14616
+    M200_nx_col: 173520
+    M200_ny_row: 73080

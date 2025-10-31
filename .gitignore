@@ -1,0 +1,101 @@
+# ============================================================
+# .gitignore for sm-smap-nisar-preproc
+# Covers: MAAP ADE, Jupyter, Python, and raster data outputs
+# ============================================================
+
+# ---- Python cache & build artifacts ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.so
+*.pyo
+*.pyd
+*.egg
+*.manifest
+*.spec
+
+# ---- Jupyter Notebook checkpoints ----
+.ipynb_checkpoints/
+
+# ---- Conda / virtual environment folders ----
+.env/
+.venv/
+venv/
+env/
+.envrc
+*.env
+
+# ---- Logs & temporary files ----
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ---- Data directories (keep data out of GitHub) ----
+data/raw/
+data/tmp/
+data/outputs/
+data/intermediate/
+*.tif
+*.tiff
+*.h5
+*.hdf5
+*.nc
+*.zarr
+*.zip
+*.tar
+*.tar.gz
+*.npz
+*.npy
+*.mat
+
+# ---- MAAP / AWS credentials ----
+aws.env
+aws_credentials.json
+
+# ---- IDE / editor configs ----
+.vscode/
+.idea/
+.spyproject/
+.project/
+.pydevproject
+
+# ---- Build or distribution artifacts ----
+build/
+dist/
+htmlcov/
+.coverage
+*.prof
+
+# ---- Figures, rendered maps, large exports ----
+figures/
+exports/
+outputs/
+plots/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# ---- Ignore temporary notebooks ----
+scratch.ipynb
+temp_*.ipynb
+test_*.ipynb
+
+# ---- macOS system files ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- MAAP-specific logs ----
+maap.log
+*.err
+*.out
+
+# ---- GitHub workflow cache (optional) ----
+.github/workflows/__pycache__/
+
+# ---- End of file ----
