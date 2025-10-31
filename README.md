@@ -26,7 +26,7 @@ Each notebook can be run independently in the **MAAP JupyterLab** environment.
 
 ```bash
 cd /projects/sm-smap-nisar-preproc
-mamba env create -f environment.yml
+mamba env create -f env.yml
 conda activate sm-smap-nisar-preproc
 ```
 
